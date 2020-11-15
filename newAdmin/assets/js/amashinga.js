@@ -6,10 +6,10 @@ $(document).ready(function () {
         var name = $('#name').val();
         var password = $('#password').val();
         var surname = $('#surname').val();
-        var username = $('#username').val(); 
+        var username = $('#username').val();
         $.ajax({
 
-            url: 'https://cors-anywhere.herokuapp.com/https://amashingamusic.co.za/sub/api/v1/user',
+            url: 'https://amashingamusic.co.za/sub/api/v1/user',
             type: 'POST',
             data: {
                 name: name,
@@ -17,7 +17,7 @@ $(document).ready(function () {
                 surname: surname,
                 username: username
             },
-       
+
             success: function (data) {
                window.location = 'login.html';
                 },
@@ -28,7 +28,7 @@ $(document).ready(function () {
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>`);
-                },  
+                },
         });
     });
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
         var username = $('#username').val();
         $.ajax({
 
-            url: 'https://cors-anywhere.herokuapp.com/https://amashingamusic.co.za/sub/api/v1/user/login',
+            url: 'https://amashingamusic.co.za/sub/api/v1/user/login',
             type: 'POST',
             data: {
                 password: password,
@@ -54,16 +54,16 @@ $(document).ready(function () {
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>`);
-                  }, 
-          
+                  },
+
         });
     });
 
     $(document).on('click', '.add-artist', function (e) {
-       
+
         $.ajax({
 
-            url: 'https://cors-anywhere.herokuapp.com/https://amashingamusic.co.za/sub/api/v1/artist',
+            url: 'https://amashingamusic.co.za/sub/api/v1/artist',
             type: 'POST',
             data: {
                    active: "1",
@@ -75,7 +75,7 @@ $(document).ready(function () {
                       surname: $('#surname').val(),
                       youtube: $('#youtube').val(),
                       youtube_music: $('#youtube_music').val(),
-                
+
             },
             dataType: 'json',
             success: function (data) {
@@ -89,36 +89,36 @@ $(document).ready(function () {
 
  $.ajax({
      type: 'GET',
-     url: "https://cors-anywhere.herokuapp.com/https://amashingamusic.co.za/sub/api/v1/artists",
+     url: "https://amashingamusic.co.za/sub/api/v1/artists",
      dataType: 'json',
      success: function (res) {
       console.log(res);
          res.forEach(elem => {
              $('.Allartists').append(`
-					
+
 								<div class="col-md-6 col-lg-4 col-xl-3">
 									<div class="profile-widget">
 										<div class="doc-img">
 											<a href="doctor-profile.html">
 												<img class="img-fluid" alt="User Image" src="assets/img/artist2.jpg">
 											</a>
-										
+
 										</div>
 										<div class="pro-content">
 												<br>
 											<h3 class="title" >
-												<a class="stage_name " value="${elem.stage_name}">${elem.stage_name}</a> 
+												<a class="stage_name " value="${elem.stage_name}">${elem.stage_name}</a>
 												<i class="fa fa-check-circle verified"></i>
 											</h3>
 											<p class="speciality">${elem.name} ${elem.surname}</p>
-									
-										
+
+
 											<div class="row row-sm">
 												<div class="col-6">
                                                     <a  class="btn view-btn" style="color:#940404"disabled>Edit Info</a>
                                                 </div>
                                                 <div class="col-6">
-                                                    <a  href="#Add_Specialities_details" data-toggle="modal" 
+                                                    <a  href="#Add_Specialities_details" data-toggle="modal"
                                                     name = "${elem.name}"
                                                     surname = "${elem.surname}"
                                                     stage_name = "${elem.stage_name}"
@@ -127,7 +127,7 @@ $(document).ready(function () {
                                                         youtube_music = "${elem.youtube_music}"
                                                     class="btn book-btn addArtistModal" >View Artist</a>
 												</div>
-											
+
 											</div>
 										</div>
 									</div>
@@ -141,33 +141,33 @@ $(document).ready(function () {
  });
       $(document).on('click', '.view-artist', function (e) {
 
- 
+
             $.ajax({
       type: 'GET',
-      url: "https://cors-anywhere.herokuapp.com/https://amashingamusic.co.za/sub/api/v1/artist/12",
+      url: "https://amashingamusic.co.za/sub/api/v1/artist/12",
       dataType: 'json',
       success: function (res) {
           console.log(res);
           res.forEach(elem => {
               $('.Allartists1123').append(`
-					
+
 								<div class="col-md-6 col-lg-4 col-xl-3">
 									<div class="profile-widget">
 										<div class="doc-img">
 											<a href="doctor-profile.html">
 												<img class="img-fluid" alt="User Image" src="assets/img/thami.jpg">
 											</a>
-										
+
 										</div>
 										<div class="pro-content">
 												<br>
 											<h3 class="title">
-												<a href="doctor-profile.html">${elem.stage_name}</a> 
+												<a href="doctor-profile.html">${elem.stage_name}</a>
 												<i class="fa fa-check-circle verified"></i>
 											</h3>
 											<p class="speciality">${elem.name} ${elem.surname}</p>
-									
-										
+
+
 											<div class="row row-sm">
 												<div class="col-6">
 													<a href="doctor-profile.html" class="btn view-btn">Edit Info</a>
@@ -208,7 +208,7 @@ $('.modal-body').find(".link_url").append(`<input type="text" class="form-contro
 // $
     //   $.ajax({
 
-    //       url: 'https://cors-anywhere.herokuapp.com/https://amashingamusic.co.za/sub/api/v1/artist',
+    //       url: 'https://amashingamusic.co.za/sub/api/v1/artist',
     //       type: 'POST',
     //       data: {
     //           active: "1",
