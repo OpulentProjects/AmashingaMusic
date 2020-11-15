@@ -1372,7 +1372,7 @@ element.style {}
   content: "\f1d8";
 }
 
-.siba {
+.artist {
   width: 100%;
 }
 .branding-bar,
@@ -1387,7 +1387,7 @@ element.style {}
   padding: 2.5rem 0;
 }
 
-.siba {
+.artist {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
